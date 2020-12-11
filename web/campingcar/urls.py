@@ -19,5 +19,6 @@ from . import views
 urlpatterns = [
     path('', views.main, name='main'),
     path('<str:carType>', views.main, name='main'),
+    path('estimate/<str:name>', views.estimate, name='estimate'),
 ]
 

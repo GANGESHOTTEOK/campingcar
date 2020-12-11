@@ -2092,14 +2092,113 @@ ul.social li a.fa-google-plus:hover {
 }
 
 /* Inner */
+.inner_page {
+  width: auto;
+  max-width: 1200px;
+  margin: auto;
+}
+
 #Inner {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 100px 0 200px;
-  margin-bottom: 100px;
-  background: white;
+  min-height: 1000px;
+  width: auto;
+  padding: 100px auto 200px;
+  margin-bottom: 200px;
+  background: url(../css/images/bg.png) repeat;
   text-align: center;
+}
+
+#Inner .esti_head h1 {
+  text-align: left;
+  font-size: xx-large;
+  padding: 50px 5% 30px;
+}
+
+#Inner .car_intro_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#Inner .car_intro_container .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 45%;
+}
+
+#Inner .car_intro_container .intro .car_explanation {
+  width: 25em;
+}
+
+#Inner .car_intro_container .car_recommend {
+  width: 45%;
+}
+
+#Inner .opt_detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#Inner .opt_detail .opt_view {
+  width: 35%;
+}
+
+#Inner .opt_detail .opt_detail_container {
+  width: 50%;
+}
+
+#Inner .opt_detail .opt_detail_container .opt_detail_detail {
+  -webkit-text-decoration-style: none;
+          text-decoration-style: none;
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+#Inner .opt_detail .opt_detail_container .opt_detail_detail div {
+  position: absolute;
+}
+
+#Inner .opt_detail .opt_detail_container .opt_detail_detail .title {
+  left: 1%;
+}
+
+#Inner .opt_detail .opt_detail_container .opt_detail_detail .content {
+  left: 30%;
+}
+
+#Inner .opt_detail .opt_detail_container .opt_detail_detail .amount {
+  left: 60%;
+}
+
+#Inner .opt_detail .opt_detail_container .opt_detail_detail .count {
+  left: 80%;
 }
 
 #Inner .car_view {
@@ -2158,6 +2257,7 @@ ul.social li a.fa-google-plus:hover {
 
 /* Footer */
 #footer {
+  margin-top: auto;
   position: relative;
   color: #858484;
   padding: 4em 0;
@@ -2320,7 +2420,7 @@ ul.social li a.fa-google-plus:hover {
   }
   /* Header */
   #header {
-    padding: 1em 0 0.5em 0;
+    padding: 1em 0 1.0em 0;
   }
   /* Nav */
   #nav ul > li {
@@ -2328,7 +2428,10 @@ ul.social li a.fa-google-plus:hover {
     padding: 0;
   }
   #nav ul > li a {
-    padding: 1.0 0.6em;
+    padding: 1.0em 0.6em;
+  }
+  .header_nav {
+    display: none;
   }
   /* Intro */
   #intro {
@@ -2361,6 +2464,9 @@ ul.social li a.fa-google-plus:hover {
     padding: 40px 0;
   }
   /* Inner */
+  #Inner {
+    padding-top: 50px;
+  }
   #Inner .car_view {
     width: 95%;
     margin: 0 auto;
@@ -2413,18 +2519,18 @@ ul.social li a.fa-google-plus:hover {
     font-weight: 900;
   }
   #titleBar .toggle:before {
-    content: '\f0c9';
+    content: '\2261';
     display: block;
     position: absolute;
     left: 10px;
     top: 10px;
-    width: 50px;
-    height: 40px;
+    width: 40px;
+    height: 35px;
     line-height: 40px;
     font-size: 18px;
     color: #fff;
     text-align: center;
-    background: rgba(150, 150, 150, 0.75);
+    background: #8c8c8c;
     border-radius: 5px;
   }
   #titleBar .toggle:active:before {
@@ -2612,10 +2718,9 @@ ul.social li a.fa-google-plus:hover {
   /* Header */
   #header {
     text-align: center;
-    padding: 1em 0 0.5em 0;
+    padding: 1em 0 1.0em 0;
   }
   #header h1 {
-    color: #252122;
     font-weight: 900;
     font-size: 1.75em;
     letter-spacing: -0.035em;

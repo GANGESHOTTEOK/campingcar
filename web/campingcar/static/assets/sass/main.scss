@@ -1044,14 +1044,94 @@
 
 
 /* Inner */
+	.inner_page{
+		width: auto;
+		max-width: 1200px;
+		margin: auto;
+
+	}
 
 	#Inner{
 		height: fit-content;
-		padding:100px 0 200px;
-		margin-bottom:100px ;
-		background:white;
+		min-height: 1000px;
+		width: auto;
+		padding:100px auto 200px;
+		margin-bottom:200px ;
+		background: url(../css/images/bg.png) repeat;
 		text-align: center;
 
+		.esti_head {
+			h1{
+				text-align: left;
+				font-size: xx-large;
+				padding: 50px 5% 30px;
+			}
+		}
+
+		.car_intro_container{
+			
+			display:flex;
+			flex-direction: row;
+			justify-content: center;
+
+
+			.intro{
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				width: 45%;
+				.car_explanation{
+					width: 25em;
+				}
+			}
+
+			.car_recommend {
+				width: 45%;
+			}
+		}
+
+		.opt_detail{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+
+			
+			.opt_view{
+				width:35%;
+
+			}
+
+			.opt_detail_container {
+				width:50%;
+
+				.opt_detail_detail{
+					text-decoration-style: none;
+					position: relative;
+					height: fit-content;
+
+					div{
+						position: absolute;
+						
+					}
+					.check_box{
+						left:1%;
+					}
+					.title{
+						left:10s%;
+					}
+					.content{
+						left:30%;
+					}
+					.amount{
+						left:60%
+					}
+					.count{
+						left:80%;
+					}
+				}
+			}
+		}
+	
 		.car_view{
 			margin:10px 10px;
 		}
@@ -1063,6 +1143,7 @@
 			max-width: 1600px;
 			height: fit-content;
 			margin:5px auto 20px; 
+
 
 			.car_area{
 				position: relative;
@@ -1096,6 +1177,7 @@
 /* Footer */
 
 	#footer {
+		margin-top: auto;
 		position: relative;
 		color: #858484;
 		padding: 4em 0;
@@ -1320,22 +1402,23 @@
 		/* Header */
 
 			#header {
-				padding: 1em 0 0.5em 0;
+				padding: 1em 0 1.0em 0;
 			}
 
 		/* Nav */
 
 			#nav {
-				// display: none;
 				ul > li {
 
 					margin:0;
 					padding:0;
 					a{
-						padding: 1.0 0.6em;
+						padding: 1.0em 0.6em;
 					}
 				}
 			}
+
+			.header_nav { display : none; }
 
 		/* Intro */
 
@@ -1385,6 +1468,7 @@
 					width: 95%;
 					margin: 0 auto;
 				}
+				padding-top: 50px;
 			}
 
 
@@ -1422,18 +1506,19 @@
 					height: 60px;
 
 					&:before {
-						content: '\f0c9';
+						content: '\2261';
+						
 						display: block;
 						position: absolute;
 						left: 10px;
 						top: 10px;
-						width: 50px;
-						height: 40px;
+						width: 40px;
+						height: 35px;
 						line-height: 40px;
 						font-size: 18px;
 						color: #fff;
 						text-align: center;
-						background: rgba(150, 150, 150, 0.75);
+						background: #8c8c8c;
 						border-radius: 5px;
 					}
 
@@ -1694,10 +1779,9 @@
 
 			#header {
 				text-align: center;
-				padding: 1em 0 0.5em 0;
+				padding: 1em 0 1.0em 0;
 
 				h1 {
-					color: #252122;
 					font-weight: 900;
 					font-size: 1.75em;
 					letter-spacing: -0.035em;
