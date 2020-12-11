@@ -2151,7 +2151,33 @@ ul.social li a.fa-google-plus:hover {
   width: 45%;
 }
 
-#Inner .opt_detail {
+#Inner .car_type {
+  width: 150px;
+  margin: auto;
+  font-weight: 800;
+  font-size: large;
+}
+
+#Inner .car_type hr {
+  margin: 15px 15px 15px;
+}
+
+#Inner .opt_detail_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#Inner .opt_detail_container .opt_detail {
+  width: 90%;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2164,45 +2190,30 @@ ul.social li a.fa-google-plus:hover {
           justify-content: space-between;
 }
 
-#Inner .opt_detail .opt_view {
-  width: 35%;
+#Inner .opt_detail_container .opt_detail .detail_img {
+  width: 300px;
+  border: 1px solid black;
 }
 
-#Inner .opt_detail .opt_detail_container {
-  width: 50%;
+#Inner .opt_detail_container .opt_detail .opt_detail_detail {
+  width: 70%;
+  padding-left: 20px;
 }
 
-#Inner .opt_detail .opt_detail_container .opt_detail_detail {
-  -webkit-text-decoration-style: none;
-          text-decoration-style: none;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+#Inner .opt_detail_container .opt_detail .opt_detail_detail h3, #Inner .opt_detail_container .opt_detail .opt_detail_detail p {
+  text-align: left;
 }
 
-#Inner .opt_detail .opt_detail_container .opt_detail_detail div {
-  position: absolute;
+#Inner .opt_detail_container .opt_detail .opt_detail_detail .count {
+  text-align: right;
+  font-size: 25px;
 }
 
-#Inner .opt_detail .opt_detail_container .opt_detail_detail .check_box {
-  left: 1%;
-}
-
-#Inner .opt_detail .opt_detail_container .opt_detail_detail .title {
-  left: 10%;
-}
-
-#Inner .opt_detail .opt_detail_container .opt_detail_detail .content {
-  left: 30%;
-}
-
-#Inner .opt_detail .opt_detail_container .opt_detail_detail .amount {
-  left: 60%;
-}
-
-#Inner .opt_detail .opt_detail_container .opt_detail_detail .count {
-  left: 80%;
+#Inner .opt_detail_container .opt_detail .opt_detail_detail .count .icon {
+  border: 1px solid grey;
+  padding: 0 10px;
+  border-radius: 0.3em;
+  margin: 0 10px;
 }
 
 #Inner .car_view {

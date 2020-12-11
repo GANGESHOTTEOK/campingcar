@@ -40,34 +40,30 @@
                     </nav>
                     <hr />
                     <br />
-                    {% for option in car.option_set.all %}
-                    <div class="opt_detail">
-                        <div class="opt_view">
-                            <img src="./assets/css/images/opt_smaple.jpeg" width="400px">
-                        </div>
-                        <div class="opt_detail_container">
-                            <h4>{{option.option_type}}</h4>
-                            <a href="@">
-                                <div class="opt_detail_detail">
-                                    <div class="check_box">
-                                        <input type="checkbox" name="check0_0" id="check0_0">
-                                        <label for="check0_0"></label>
-                                    </div>
-                                    <div class="title">{{option.name}}</div>
-                                    <div class="content">{{option.explanation}}</div>
-                                    <div class="amount">{{option.price}}원</div>
-                                    <div class="count">
-                                        <span class="minus_icon">-</span>
-                                        <span class="value">1개</span>
-                                        <span class="plus_icon">+</span>
-                                    </div>
-                                    
-                                </div>
-                            </a>
-                        </div>
+                    <div class="car_type">
+                        <hr/>냉난방<hr/>
+                        <br/>
                     </div>
-                    {% endfor %}
-                </div>
+                    <div class="opt_detail_container">
+                        {% for option in car.option_set.all %}
+                            <div class="opt_detail">
+
+                                <div class="detail_img">
+                                    <img src={{option.image}}>
+                                </div>
+
+                                <div class="opt_detail_detail">
+                                    <h3>{{option.name}}</h3>
+                                    <p>{{option.explanation}}</p>
+                                    <div class="count">
+                                        <span class="minus icon">-</span>
+                                        <span class="value">{{option.price}}</span>
+                                        <span class="plus icon">+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
 
             </div>
 		</div>

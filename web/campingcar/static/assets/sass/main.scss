@@ -1091,43 +1091,49 @@
 			}
 		}
 
-		.opt_detail{
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
+		.car_type{
+			width:150px;
+			margin: auto;
+			font-weight: 800;
+			font-size: large;
+			hr{ margin:15px 15px 15px}
+		}
+		 
+		.opt_detail_container {
 
-			
-			.opt_view{
-				width:35%;
+			display:flex;
+			flex-direction: column;
+			justify-content: flex-start;
 
-			}
+			.opt_detail{
+				width:90%;
+				margin: auto;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
 
-			.opt_detail_container {
-				width:50%;
+				.detail_img{
+					width:300px;
+					border:1px solid black;
+				}
 
 				.opt_detail_detail{
-					text-decoration-style: none;
-					position: relative;
-					height: fit-content;
+					width: 70%;
+					padding-left: 20px;
 
-					div{
-						position: absolute;
-						
-					}
-					.check_box{
-						left:2%;
-					}
-					.title{
-						left:10%;
-					}
-					.content{
-						left:30%;
-					}
-					.amount{
-						left:60%
+					h3,p{
+						text-align: left;
 					}
 					.count{
-						left:80%;
+						text-align: right;
+						font-size: 25px;
+
+						.icon{
+							border: 1px solid grey;
+							padding:0 10px;
+							border-radius: 0.3em;
+							margin: 0 10px;
+						}
 					}
 				}
 			}
