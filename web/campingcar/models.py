@@ -1,4 +1,6 @@
 from django.db import models
+import os
+from web.settings import MEDIA_ROOT
 
 
 class Car(models.Model):
@@ -12,10 +14,11 @@ class Car(models.Model):
 								   blank = False,
 								   default = MODEL_CHOICES[0][0])
 	explanation = models.TextField(default="차량 설명을 입력하세요.")
-	image = models.ImageField(upload_to = 'images/', blank = True, null = True)
+	image = models.ImageField(upload_to = 'images/car', blank = True, null = True)
 
 	def __str__(self):
 		return self.name
+
 
 class Option(models.Model):
 	OPTION_CHOICES = (("AirConditioner", "냉난방"), ("DoorAndWindow", "도어 & 창문"), 
@@ -35,7 +38,9 @@ class Option(models.Model):
 								   null = False,
 								   blank = False,
 								   default = OPTION_CHOICES[-1][0])
+	image = models.ImageField(upload_to = 'images/options', blank = True, null = True)
 	price = models.IntegerField()
 
 	def __str__(self):
 		return self.name  + ", " + str(self.price)  + "원"
+
