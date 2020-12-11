@@ -40,21 +40,22 @@
                     </nav>
                     <hr />
                     <br />
+                    {% for option in car.option_set.all %}
                     <div class="opt_detail">
                         <div class="opt_view">
                             <img src="./assets/css/images/opt_smaple.jpeg" width="400px">
                         </div>
                         <div class="opt_detail_container">
-                            <h4>냉난방</h4>
+                            <h4>{{option.option_type}}</h4>
                             <a href="@">
                                 <div class="opt_detail_detail">
                                     <div class="check_box">
                                         <input type="checkbox" name="check0_0" id="check0_0">
                                         <label for="check0_0"></label>
                                     </div>
-                                    <div class="title">벽걸이 에어컨</div>
-                                    <div class="content">6평형 캐리어 에어컨</div>
-                                    <div class="amount">3억원</div>
+                                    <div class="title">{{option.name}}</div>
+                                    <div class="content">{{option.explanation}}</div>
+                                    <div class="amount">{{option.price}}원</div>
                                     <div class="count">
                                         <span class="minus_icon">-</span>
                                         <span class="value">1개</span>
@@ -65,6 +66,7 @@
                             </a>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
 
             </div>
