@@ -1052,13 +1052,15 @@
 	}
 
 	#Inner{
+		
 		height: fit-content;
 		min-height: 1000px;
 		width: auto;
-		padding:100px auto 200px;
+		padding:100px 0 200px;
 		margin-bottom:200px ;
 		background: url(../css/images/bg.png) repeat;
 		text-align: center;
+
 
 		.esti_head {
 			h1{
@@ -1117,7 +1119,7 @@
 						left:1%;
 					}
 					.title{
-						left:10s%;
+						left:10%;
 					}
 					.content{
 						left:30%;

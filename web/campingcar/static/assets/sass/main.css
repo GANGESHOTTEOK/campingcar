@@ -2104,7 +2104,7 @@ ul.social li a.fa-google-plus:hover {
   height: fit-content;
   min-height: 1000px;
   width: auto;
-  padding: 100px auto 200px;
+  padding: 100px 0 200px;
   margin-bottom: 200px;
   background: url(../css/images/bg.png) repeat;
   text-align: center;
@@ -2185,8 +2185,12 @@ ul.social li a.fa-google-plus:hover {
   position: absolute;
 }
 
-#Inner .opt_detail .opt_detail_container .opt_detail_detail .title {
+#Inner .opt_detail .opt_detail_container .opt_detail_detail .check_box {
   left: 1%;
+}
+
+#Inner .opt_detail .opt_detail_container .opt_detail_detail .title {
+  left: 10%;
 }
 
 #Inner .opt_detail .opt_detail_container .opt_detail_detail .content {
