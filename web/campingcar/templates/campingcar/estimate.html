@@ -11,12 +11,11 @@
 
                 <div class="car_intro_container inner_page">
                     <div class="intro">
-                        <h2>2.5톤 마이티</h2>
+                        <h2>{{car.name}}</h2>
                         <div class="car_detail_img">
                             <img src="{{car.image.url}}">
                         </div>
-                        <div class="car_explanation">2.5마이티는 정말 튼튼하답니다. 
-                            가성비와 저중심설계를 통해 안정성까지 구비한 트럭캠퍼 입니다.</div>
+                        <div class="car_explanation">{{car.explanation}}</div>
                     </div>
                     <div class="car_recommend">
                         <img src="{% static 'assets/css/images/recocar.jpeg' %}" style="width: 300px;">
