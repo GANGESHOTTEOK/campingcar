@@ -5,21 +5,27 @@
         {% block contents %}
             <div id="Inner">
 
-                <nav id="nav" >
+                <nav id="nav">
                     <ul>
-                        <li class="current"><a href="/">전체</a></li>
-                        <li><a href="/TruckCamper">트럭캠퍼</a></li>
-                        <li><a href="/TruckBase">트럭베이스</a></li>
-                        <li><a href="/VanBase">벤베이스</a></li>
-                        <li><a href="/SpecificPurpose">특수목적</a></li>
-                        <li><a href="/Trailer">트레일러</a></li>
+                        <li class="current" onclick="switchButton(this);" 
+                            name="carType" id="all"><a>전체</a></li>
+                        <li onclick="switchButton(this);" 
+                            name="carType" id="TruckCamper"><a>트럭캠퍼</a></li>
+                        <li onclick="switchButton(this);" 
+                            name="carType" id="TruckBase"><a>트럭베이스</a></li>
+                        <li onclick="switchButton(this);" 
+                            name="carType" id="VanBase"><a>벤베이스</a></li>
+                        <li onclick="switchButton(this);" 
+                            name="carType" id="SpecificPurpose"><a>특수목적</a></li>
+                        <li onclick="switchButton(this);" 
+                            name="carType" id="Trailer"><a>트레일러</a></li>
                     </ul>
                 </nav>
                 
                 <div class="car_view"> 
                     <div class="car_flex">
                         {% for car in carList%}
-                        <div class="car_area">
+                        <div class="car_area" name="{{car.type}}">
                             <a href="estimate/{{car.name}}" class="car_a">
                                 <span class="car_img">
                                     <img src="{{car.image.url}}" alt="carimg">

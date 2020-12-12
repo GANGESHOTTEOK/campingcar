@@ -83,6 +83,24 @@
 				</section>
 
 		</div>
+		<script type="text/javascript">
+			function switchButton(element) {
+				var carTypeList = document.getElementsByName("carType");
+				for (var i = 0; i < carTypeList.length; i++) {
+					carTypeList[i].setAttribute('class', '');
+				}
+				element.setAttribute('class', 'current');
+
+				var carList = document.getElementsByClassName("car_area");
+				for (var i = 0; i < carList.length; i++) {
+					if ((carList[i].getAttribute("name") == element.getAttribute("id")) ||
+						element.getAttribute("id") == "all")
+						carList[i].style.display = "block";
+					else
+						carList[i].style.display = "none";
+				}
+			}
+        </script>
 
 		<!-- Scripts 
 			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
