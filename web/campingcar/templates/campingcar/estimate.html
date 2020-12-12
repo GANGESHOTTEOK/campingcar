@@ -11,14 +11,20 @@
 
                 <div class="car_intro_container inner_page">
                     <div class="intro">
-                        <h2>{{car.name}}</h2>
+                        <h1>{{car.name}}</h1>
                         <div class="car_detail_img">
                             <img src="{{car.image.url}}">
                         </div>
                         <div class="car_explanation">{{car.explanation}}</div>
                     </div>
                     <div class="car_recommend">
-                        <img src="{% static 'assets/css/images/recocar.jpeg' %}" style="width: 300px;">
+                        <div class="reco_detail">
+                            <h2>추천차종</h2>
+                            <div class="graph"></div>
+                            <div class="first">1위 니차</div>
+                            <div class="second">2위 내차</div>
+                            <div class="third">3위 엄마차</div>
+                        </div>
                     </div>
                 </div>
 
@@ -56,9 +62,9 @@
                                     <h3>{{option.name}}</h3>
                                     <p>{{option.explanation}}</p>
                                     <div class="count">
-                                        <span class="minus icon">-</span>
-                                        <span class="value">{{option.price}}</span>
-                                        <span class="plus icon">+</span>
+                                        <span class="minus icon"><img src="../../static/assets/css/images/minus.png"></span>
+                                        <span class="value">{{option.price}}원</span>
+                                        <span class="plus icon"><img src="../../static/assets/css/images/plus.png"></span>
                                     </div>
                                 </div>
                             </div>

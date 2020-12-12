@@ -2095,6 +2095,7 @@ ul.social li a.fa-google-plus:hover {
 .inner_page {
   width: auto;
   max-width: 1200px;
+  min-width: 500px;
   margin: auto;
 }
 
@@ -2124,9 +2125,11 @@ ul.social li a.fa-google-plus:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 81%;
+  margin: 0 auto;
 }
 
 #Inner .car_intro_container .intro {
@@ -2140,15 +2143,46 @@ ul.social li a.fa-google-plus:hover {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 45%;
+  width: 50%;
 }
 
 #Inner .car_intro_container .intro .car_explanation {
-  width: 25em;
+  width: 100%;
+}
+
+#Inner .car_intro_container .intro .car_detail_img {
+  position: relative;
+  width: 100%;
+  padding-top: 50%;
+  padding-bottom: 40px;
+}
+
+#Inner .car_intro_container .intro .car_detail_img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 450px;
+  min-width: 300px;
 }
 
 #Inner .car_intro_container .car_recommend {
-  width: 45%;
+  width: 40%;
+  height: auto;
+  position: relative;
+}
+
+#Inner .car_intro_container .car_recommend .reco_detail {
+  height: 100%;
+  border: 1.5px double gray;
+}
+
+#Inner .car_intro_container .car_recommend .reco_detail .graph {
+  height: 50%;
+  border: 1.5px double gray;
+  margin: 10px 20px;
 }
 
 #Inner .car_type {
@@ -2209,11 +2243,12 @@ ul.social li a.fa-google-plus:hover {
   font-size: 25px;
 }
 
-#Inner .opt_detail_container .opt_detail .opt_detail_detail .count .icon {
-  border: 1px solid grey;
-  padding: 0 10px;
-  border-radius: 0.3em;
-  margin: 0 10px;
+#Inner .opt_detail_container .opt_detail .opt_detail_detail .count .value {
+  vertical-align: text-top;
+}
+
+#Inner .opt_detail_container .opt_detail .opt_detail_detail .count img {
+  width: 30px;
 }
 
 #Inner .car_view {

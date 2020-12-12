@@ -1047,6 +1047,7 @@
 	.inner_page{
 		width: auto;
 		max-width: 1200px;
+		min-width: 500px;
 		margin: auto;
 
 	}
@@ -1073,21 +1074,51 @@
 			
 			display:flex;
 			flex-direction: row;
-			justify-content: center;
+			justify-content: space-between;
+			width: 81%;
+			margin: 0 auto;
 
 
 			.intro{
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
-				width: 45%;
+				width: 50%;
 				.car_explanation{
-					width: 25em;
+					width: 100%;
+				}
+				.car_detail_img{
+					position: relative;
+					img { 
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						width: 100%;
+						max-width: 450px;
+						min-width: 300px;
+					}
+					width: 100%;
+					padding-top: 50%;
+					padding-bottom: 40px;
 				}
 			}
 
 			.car_recommend {
-				width: 45%;
+				width: 40%;
+				height: auto;
+				position: relative;
+				.reco_detail{
+					height: 100%;
+					border: 1.5px double gray;
+
+					.graph{
+						height: 50%;
+						
+						border: 1.5px double gray;
+						margin: 10px 20px;
+					}
+				}
 			}
 		}
 
@@ -1127,12 +1158,13 @@
 					.count{
 						text-align: right;
 						font-size: 25px;
+						
+						.value {
+							vertical-align: text-top;
+						}
 
-						.icon{
-							border: 1px solid grey;
-							padding:0 10px;
-							border-radius: 0.3em;
-							margin: 0 10px;
+						img{
+							width:30px;
 						}
 					}
 				}
