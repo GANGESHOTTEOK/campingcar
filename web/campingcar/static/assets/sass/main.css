@@ -2244,11 +2244,30 @@ ul.social li a.fa-google-plus:hover {
 }
 
 #Inner .opt_detail_container .opt_detail .opt_detail_detail .count .value {
-  vertical-align: text-top;
+  vertical-align: super;
+  margin: 0 10px;
 }
 
 #Inner .opt_detail_container .opt_detail .opt_detail_detail .count img {
   width: 30px;
+  position: relative;
+  top: -1.5px;
+  left: -1.5px;
+}
+
+#Inner .opt_detail_container .opt_detail .opt_detail_detail .count div {
+  display: inline-block;
+}
+
+#Inner .opt_detail_container .opt_detail .opt_detail_detail .count .icon {
+  height: 27px;
+  width: 27px;
+  border-radius: 100%;
+  background: #f2f937;
+}
+
+#Inner .opt_detail_container .opt_detail .opt_detail_detail .count .icon:hover {
+  background: #74f937;
 }
 
 #Inner .car_view {

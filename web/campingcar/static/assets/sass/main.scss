@@ -1160,11 +1160,26 @@
 						font-size: 25px;
 						
 						.value {
-							vertical-align: text-top;
+							vertical-align: super;
+							margin:0 10px;
 						}
 
 						img{
 							width:30px;
+							position: relative;
+							top: -1.5px;
+							left: -1.5px;
+						}
+
+						div {
+							display: inline-block;
+						}
+						.icon{
+							height: 27px;
+							width: 27px;
+							border-radius: 100%;
+							background: rgb(242, 249, 55);
+							&:hover{ background: rgb(116, 249, 55); }
 						}
 					}
 				}
