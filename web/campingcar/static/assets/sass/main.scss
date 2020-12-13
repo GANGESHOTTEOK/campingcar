@@ -879,13 +879,9 @@
 				font-style: italic;
 				margin: 0 0.35em 0 0.35em;
 
-				> ul {
-					display: none;
-				}
-
-				> a {
+				> a, button {
 					border-radius: 5px;
-					color: #5d5d5d;
+					background: #02327fa0;
 					text-decoration: none;
 					padding: 0.6em 1.2em 0.6em 1.2em;
 					@include vendor('transition', 'background-color .25s ease-in-out');
@@ -893,15 +889,15 @@
 				}
 
 				&:hover, &.active {
-					> a {
-						background: #f3f3f3;
+					>a, button {
+						background: #35479a;
 					}
 				}
 
 				&.current {
-					> a {
+					> a, button {
 						background: #233067;
-						color: #fff !important;
+						color: #fff;
 						font-weight: 700;
 					}
 				}
@@ -909,7 +905,11 @@
 		}
 	}
 
-	.header_nav > ul > li > a:hover { background:#237067 !important;}
+	.header_nav > ul > li > a {
+		&:hover {background:#237067 !important;}
+		background: #ffffff00 !important;
+	}
+
 
 	.dropotron {
 		border-radius: 5px;
@@ -1178,8 +1178,8 @@
 							height: 27px;
 							width: 27px;
 							border-radius: 100%;
-							background: rgb(242, 249, 55);
-							&:hover{ background: rgb(116, 249, 55); }
+							background: rgb(214, 210, 0);
+							&:hover{ background: rgb(81, 254, 0); }
 						}
 					}
 				}

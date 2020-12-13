@@ -1935,13 +1935,9 @@ ul.social li a.fa-google-plus:hover {
   margin: 0 0.35em 0 0.35em;
 }
 
-#nav > ul > li > ul {
-  display: none;
-}
-
-#nav > ul > li > a {
+#nav > ul > li > a, #nav > ul > li button {
   border-radius: 5px;
-  color: #5d5d5d;
+  background: #02327fa0;
   text-decoration: none;
   padding: 0.6em 1.2em 0.6em 1.2em;
   -webkit-transition: background-color .25s ease-in-out;
@@ -1949,14 +1945,18 @@ ul.social li a.fa-google-plus:hover {
   outline: 0;
 }
 
-#nav > ul > li:hover > a, #nav > ul > li.active > a {
-  background: #f3f3f3;
+#nav > ul > li:hover > a, #nav > ul > li:hover button, #nav > ul > li.active > a, #nav > ul > li.active button {
+  background: #35479a;
 }
 
-#nav > ul > li.current > a {
+#nav > ul > li.current > a, #nav > ul > li.current button {
   background: #233067;
-  color: #fff !important;
+  color: #fff;
   font-weight: 700;
+}
+
+.header_nav > ul > li > a {
+  background: #ffffff00 !important;
 }
 
 .header_nav > ul > li > a:hover {
@@ -2263,11 +2263,11 @@ ul.social li a.fa-google-plus:hover {
   height: 27px;
   width: 27px;
   border-radius: 100%;
-  background: #f2f937;
+  background: #d6d200;
 }
 
 #Inner .opt_detail_container .opt_detail .opt_detail_detail .count .icon:hover {
-  background: #74f937;
+  background: #51fe00;
 }
 
 #Inner .car_view {
