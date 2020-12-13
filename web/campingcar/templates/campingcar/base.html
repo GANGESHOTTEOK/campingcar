@@ -110,7 +110,8 @@
 
 				var optionList = document.getElementsByClassName("opt_detail");
 				for (var i = 0; i < optionList.length; i++) {
-					if (optionList[i].getAttribute("name") == element.getAttribute("id"))
+					if (optionList[i].getAttribute("name") == element.getAttribute("id") ||
+						element.getAttribute("id") == "all")
 						optionList[i].style.display = "block";
 					else
 						optionList[i].style.display = "none";
