@@ -84,7 +84,7 @@
 
 		</div>
 		<script type="text/javascript">
-			function switchButton(element) {
+			function carSwitchButton(element) {
 				var carTypeList = document.getElementsByName("carType");
 				for (var i = 0; i < carTypeList.length; i++) {
 					carTypeList[i].setAttribute('class', '');
@@ -98,6 +98,22 @@
 						carList[i].style.display = "block";
 					else
 						carList[i].style.display = "none";
+				}
+			}
+
+			function optionSwitchButton(element) {
+				var optionTypeList = document.getElementsByName("optionType");
+				for (var i = 0; i < optionTypeList.length; i++) {
+					optionTypeList[i].setAttribute('class', '');
+				}
+				element.setAttribute('class', 'current');
+
+				var optionList = document.getElementsByClassName("opt_detail");
+				for (var i = 0; i < optionList.length; i++) {
+					if (optionList[i].getAttribute("name") == element.getAttribute("id"))
+						optionList[i].style.display = "block";
+					else
+						optionList[i].style.display = "none";
 				}
 			}
         </script>
