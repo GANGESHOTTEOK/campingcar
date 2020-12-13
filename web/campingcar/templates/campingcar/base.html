@@ -116,6 +116,31 @@
 						optionList[i].style.display = "none";
 				}
 			}
+
+			function changePriceNegative(element, optionName) {
+				var optionPrice = document.getElementById(optionName + "_value");
+				var optionQuantity = document.getElementById(optionName + "_quantity");
+
+				var this_price = Number(optionPrice.getAttribute('value'));
+				var this_quantity = Number(optionQuantity.getAttribute('value'));
+				if (this_quantity > 0) {
+					this_quantity -= 1;
+					optionQuantity.setAttribute('value', this_quantity);
+					optionQuantity.innerHTML = this_quantity;
+				}
+			}
+
+			function changePricePositive(element, optionName) {
+				var optionPrice = document.getElementById(optionName + "_value");
+				var optionQuantity = document.getElementById(optionName + "_quantity");
+
+				var this_price = Number(optionPrice.getAttribute('value'));
+				var this_quantity = Number(optionQuantity.getAttribute('value'));
+				
+				this_quantity += 1;
+				optionQuantity.setAttribute('value', this_quantity);
+				optionQuantity.innerHTML = this_quantity;
+			}
         </script>
 
 		<!-- Scripts 
