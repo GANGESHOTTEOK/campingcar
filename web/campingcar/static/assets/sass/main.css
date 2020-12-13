@@ -1963,6 +1963,10 @@ ul.social li a.fa-google-plus:hover {
   background: #237067 !important;
 }
 
+.inner_nav > ul > li {
+  margin: 0 0 !important;
+}
+
 .dropotron {
   border-radius: 5px;
   background-color: #252122;
