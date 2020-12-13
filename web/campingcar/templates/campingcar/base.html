@@ -121,27 +121,41 @@
 			function changePriceNegative(element, optionName) {
 				var optionPrice = document.getElementById(optionName + "_value");
 				var optionQuantity = document.getElementById(optionName + "_quantity");
+				var totalPriceVar = document.getElementById("total_price");
 
 				var this_price = Number(optionPrice.getAttribute('value'));
 				var this_quantity = Number(optionQuantity.getAttribute('value'));
+				var total_price = Number(totalPriceVar.getAttribute('value'));
+
 				if (this_quantity > 0) {
 					this_quantity -= 1;
 					optionQuantity.setAttribute('value', this_quantity);
 					optionQuantity.innerHTML = this_quantity;
+					total_price -= this_price;
+					totalPriceVar.setAttribute('value', total_price);
+					totalPriceVar.innerHTML = total_price.toLocaleString();
 				}
+
 			}
 
 			function changePricePositive(element, optionName) {
 				var optionPrice = document.getElementById(optionName + "_value");
 				var optionQuantity = document.getElementById(optionName + "_quantity");
+				var totalPriceVar = document.getElementById("total_price");
 
 				var this_price = Number(optionPrice.getAttribute('value'));
 				var this_quantity = Number(optionQuantity.getAttribute('value'));
+				var total_price = Number(totalPriceVar.getAttribute('value'));
 				
 				this_quantity += 1;
 				optionQuantity.setAttribute('value', this_quantity);
 				optionQuantity.innerHTML = this_quantity;
+
+				total_price += this_price;
+				totalPriceVar.setAttribute('value', total_price);
+				totalPriceVar.innerHTML = total_price.toLocaleString();
 			}
+
         </script>
 	</body>
 </html>
