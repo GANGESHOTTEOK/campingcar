@@ -11,7 +11,8 @@ def main(request, carType = 0):
 def detail(request):
 	return render(request, 'campingcar/detail_estimate.html')
 
-
 def estimate(request, name = 0):
 	car = Car.objects.get(name = name)
+	if request.method == "POST":
+		option_dict = request.POST
 	return render(request, 'campingcar/estimate.html', {'car' : car})
