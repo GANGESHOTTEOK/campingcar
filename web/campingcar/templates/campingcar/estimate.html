@@ -58,7 +58,8 @@
                         <hr/>냉난방<hr/>
                         <br/>
                     </div>
-                    <div class="opt_detail_container">
+                    <form method="post" class="opt_detail_container">
+                        {% csrf_token %}
                         {% for option in car.option_set.all %}
                             <div class="opt_detail" name="{{option.option_type}}">
                                 <div class="detail_img">
@@ -75,7 +76,8 @@
                                         <div class="minus icon" onclick="changePriceNegative(this, '{{option.name}}');">
                                             <img src="../../static/assets/css/images/minus.png">
                                         </div>
-                                        <div class="quantity" id="{{option.name}}_quantity" value=0>0</div>
+                                        <input class="quantity" id="{{option.name}}_quantity" 
+                                               name="{{option.name}}_quantity" value=0>
                                         <div class="plus icon"onclick="changePricePositive(this, '{{option.name}}');"> 
                                             <img src="../../static/assets/css/images/plus.png">
                                         </div>
@@ -84,7 +86,8 @@
                                 <hr/>
                             </div>
                         {% endfor %}
-                    </div>
+                        <button type="submit">Send</button>
+                    </form>
 
                 </div>
             </div>
@@ -93,11 +96,9 @@
             
             <div id="amount_bar">
                 <div class="btn_area">
-                    <!--
                     <a href="#" class="back">
                         <span class="icon">이전</span>
                     </a>
-                -->
                     <a href="#" class="for">
                         <span class="icon">다음</span>
                     </a>
