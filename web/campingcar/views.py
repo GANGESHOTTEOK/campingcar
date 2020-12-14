@@ -15,7 +15,7 @@ def estimate(request, name = 0):
 	if request.method == "POST":
 		option_dict = {}
 		option_dict['car'] = car
-		for option in option_dict.keys():
+		for option in request.POST.keys():
 			if 'csrf' not in option:
 				option_dict[option] = request.POST[option]
 		for item in option_dict.keys():
