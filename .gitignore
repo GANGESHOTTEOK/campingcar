@@ -1,0 +1,3 @@
+## ignore file ##
+
+web/campingcar/__pycache/*.pyc
