@@ -23,7 +23,7 @@
         <table class="tg">
             <tbody>
               <tr>
-                <td class="tg-oo1s" colspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">레져밴 (1톤 소형) 기본사양</span></td>
+                <td class="tg-oo1s" colspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{car.name}} 기본사양</span></td>
               </tr>
               <tr>
                 <td class="tg-e9j4" colspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
@@ -157,7 +157,7 @@
         <table class="tg">
             <tbody>
               <tr>
-                <td class="tg-ps7t" colspan="12"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#404040">레져밴 (1톤 소형) 견적&amp;계약서 (챠량구입시)</span></td>
+                <td class="tg-ps7t" colspan="12"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#404040">{{car.name}} 견적&amp;계약서 (챠량구입시)</span></td>
               </tr>
               <tr>
                 <td class="tg-1szv" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">제작자 상호</span></td>
@@ -219,7 +219,7 @@
                 <td class="tg-7un6" colspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none">금액 합계 (VAT포함)</span></td>
               </tr>
               <tr>
-                <td class="tg-7un6"><span style="font-weight:400;font-style:normal;text-decoration:none">레져밴 (1톤 소형)</span></td>
+                <td class="tg-7un6"><span style="font-weight:400;font-style:normal;text-decoration:none">{{car.name}}</span></td>
                 <td class="tg-eiwr"><span style="font-weight:400;font-style:normal;text-decoration:none">-</span></td>
                 <td class="tg-eiwr"><span style="font-weight:400;font-style:normal;text-decoration:none">-</span></td>
                 <td class="tg-eiwr" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none">-</span></td>
@@ -301,343 +301,33 @@
               </tr>
               <tr>
                 <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">1</span></td>
-                <td class="tg-o042" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">레져밴 (1톤 소형)</span></td>
-                <td class="tg-kv9q"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">레져밴 (1톤 소형) 기본사양 내역 별첨</span></td>
+                <td class="tg-o042" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{car.name}}</span></td>
+                <td class="tg-kv9q"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{car.name}} 기본사양 내역 별첨</span></td>
                 <td class="tg-jl4b" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#FBE3D5">　</span></td>
               </tr>
-              <tr>
-                <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">2</span></td>
-                <td class="tg-oo1s" rowspan="4"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">냉방</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">/</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">난방</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">루프 에어컨 : 6평형</span>   <span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">_ 냉방+난방 겸용</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">3</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">부동액 식 무시동 히터 : D5 확장 시스템 _ 난방+온수</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
+
+
+              {% for OPTION_KEY, OPTION_ITEM in OPTION_DICT.items %}
+                {% for option, option_num in option_dict.items %}
+                  {% if option.type == OPTION_KEY %}
+                  <tr>
+                    <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">2</span></td>
+                    <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{OPTION_ITEM}}</span></td>
+                    <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
+                    <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{option.name}}</span>   <span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{option.explaination}}</span></td>
+                    <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">{{option_num}}</span></td>
+                    <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">{{option.price}}</span></td>
+                  </tr>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
               <tr>
                 <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">4</span></td>
+                 <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기타</span></td>
                 <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
                 <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">공기식 무시동 히터 : D2</span></td>
                 <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
                 <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">5</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">바닥난방 : 황토EVA + 열전도호스+열전판 + 순환펌프 외</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">6</span></td>
-                <td class="tg-oo1s" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">도어</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">/</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">창문</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">미국식 출입문</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">7</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">유럽식 출입문</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-8b3m"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">8</span></td>
-                <td class="tg-py2d"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-zeow"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">스카이 창 : LED 조명/블라인드/방충망 _ 700 X 500</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-8b3m"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">9</span></td>
-                <td class="tg-8b3m" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">어닝</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">피안마 사이드 어닝 3m</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">10</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">LED 어닝 라이트 2m ( 밝기조절 )</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">11</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">3m어닝텐트 : 3m 사이드어닝 적용</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">12</span></td>
-                <td class="tg-oo1s" rowspan="5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">배터리</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">딥사이클 배터리 : 100A : 납산배터리/아트라스</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">13</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">리튬인산철 배터리 100A + 전력량계 : GSP</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">14</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">리튬인산철 배터리 360A + 전력량계 : GSP</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">15</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">리튬인산철 배터리 480A + 전력량계 : GSP</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">16</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">리튬인산철 배터리 600A + 전력량계 : GSP</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">17</span></td>
-                <td class="tg-oo1s" rowspan="4"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">AC</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">충전기</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">납산 배터리_ AC 충전기 : 25A : 올텍</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">18</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">리튬인산철 용 AC 충전기 _ 20A : GSP</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">19</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">리튬인산철 용 AC 충전기 : 40A : GSP</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">20</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">리튬인산철 용 AC 충전기 : 75A : GSP</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">21</span></td>
-                <td class="tg-oo1s" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">주행 충전 시스템</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">납산 배터리 : 140A + 서킷브레이크 휴즈 + 잡자재+공임</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">22</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">리튬 인산철 : 30A + 서킷브레이크 휴즈 + 잡자재+공임</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">23</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">리튬 인산철 : 60A + 서킷브레이크 휴즈 + 잡자재+공임</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">24</span></td>
-                <td class="tg-oo1s" rowspan="4"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">인버터</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">유사정현파 2.2k</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">25</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">유사정현파 : 3k</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">26</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">순수정현파: 2k</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">27</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">순수정현파 : 3k</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">28</span></td>
-                <td class="tg-oo1s" rowspan="4"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">태양광 시스템</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">태양광 판넬 250W</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">29</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">태양광 판넬 : 300W</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">30</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">태양광 컨트롤러 MPPT 20A</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">31</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">태양광 컨트롤러 MPPT : 40A</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">32</span></td>
-                <td class="tg-oo1s" rowspan="5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">욕실 시스템</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">고정식 변기 + 샤워베이스 : 테포드 C_200 + 전용 베이스</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">33</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">이동식 변기 : 포타포티 145</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">34</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">이동식 변기 : 포타포티 345</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">35</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">코너세면대 + 냉온수전</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">36</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">욕실 전동 환풍기</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">37</span></td>
-                <td class="tg-oo1s" rowspan="4"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">A/V</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">시스템</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">TV 수신 시스템 : 스카이 라이프 : 위성안테나+위성수신기+수납장</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">38</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">노래방 시스템 : 반주기+엠프+스피커+리모컨+마이크+노래책+수납장</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">39</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">2채널 블랙박스 : 외장형</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">40</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">4채널 블랙박스 : 외장형</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">41</span></td>
-                <td class="tg-oo1s" rowspan="4"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">가구</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">/</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">자재</span></td>
-                <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
-                <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">스탠다드 바닥 마감 : 강마루 마감</span></td>
-                <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">1</span></td>
-                <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">42</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">최고급 바닥 마감 : 요트바닥 스타일 마감</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">43</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">가구 및 구조재 업그레이드 : 유광 월넷</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">44</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">욕실 옆 상단 냉장고 수납장 : 주방 하부 오픈형</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">45</span></td>
-                <td class="tg-oo1s" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기타</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">자전거 캐리어 : 2대 거치용 + 전용브라켓</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">46</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">후방 사다리 : 피안마</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-              </tr>
-              <tr>
-                <td class="tg-nrix"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">47</span></td>
-                <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">파워 포인트 아울렛 : 220V + 12V 외부 콘센트</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">　</span></td>
-                <td class="tg-w14e"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">　</span></td>
               </tr>
               <tr>
                 <td class="tg-qfua" colspan="6" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">합계 금액 : 개별소비세+교육세 포함 (VAT별도)</span></td>

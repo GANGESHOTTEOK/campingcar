@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Car
+from .models import Car, Option, OPTION_DICT
 
 def main(request, carType = 0):
 	carList = Car.objects.all()
@@ -7,18 +7,14 @@ def main(request, carType = 0):
 		carList = Car.objects.filter(type = carType)
 	return render(request, 'campingcar/index.html', {'carList' : carList})
 
-def detail(request):
-	return render(request, 'campingcar/detail_estimate.html')
-
 def estimate(request, name = 0):
 	car = Car.objects.get(name = name)
 	if request.method == "POST":
 		option_dict = {}
-		option_dict['car'] = car
 		for option in request.POST.keys():
 			if 'csrf' not in option:
-				option_dict[option] = request.POST[option]
-		for item in option_dict.keys():
-			print("%s, %s"%(item, option_dict[item]))
+				option_dict[Option.objects.get(id=option)] = request.POST[option]
+		return render(request, 'campingcar/detail_estimate.html', 
+				     {'car' : car, 'option_dict' : option_dict, "OPTION_DICT" : OPTION_DICT})
 
 	return render(request, 'campingcar/estimate.html', {'car' : car})
