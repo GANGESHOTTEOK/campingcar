@@ -316,7 +316,7 @@
                     <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
                     <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{option.name}}</span>   <span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{option.explaination}}</span></td>
                     <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">{{option_num}}</span></td>
-                    <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">{{option.price}}</span></td>
+                    <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">{%widthratio option.price 1 option_num %}</span></td>
                   </tr>
                   {% endif %}
                 {% endfor %}

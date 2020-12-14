@@ -13,7 +13,7 @@ def estimate(request, name = 0):
 		option_dict = {}
 		for option in request.POST.keys():
 			if 'csrf' not in option:
-				option_dict[Option.objects.get(id=option)] = request.POST[option]
+				option_dict[Option.objects.get(id=option)] = int(request.POST[option])
 		return render(request, 'campingcar/detail_estimate.html', 
 				     {'car' : car, 'option_dict' : option_dict, "OPTION_DICT" : OPTION_DICT})
 
