@@ -2263,6 +2263,11 @@ ul.social li a.fa-google-plus:hover {
 
 #Inner .opt_detail_container .opt_detail .opt_detail_detail .count .quantity {
   font-weight: 700;
+  font-size: 25px;
+  width: 40px;
+  border: 0px;
+  background: none;
+  padding-left: 12px;
 }
 
 #Inner .opt_detail_container .opt_detail .opt_detail_detail .count img {
