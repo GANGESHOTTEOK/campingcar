@@ -11,9 +11,3 @@ def main(request, carType = 0):
 def estimate(request, name = 0):
 	car = Car.objects.get(name = name)
 	return render(request, 'campingcar/estimate.html', {'car' : car})
-
-def post(request):
-	print(123123)
-	if request.method == "POST":
-		print("["+request.POST+"]")
-	print(123123)

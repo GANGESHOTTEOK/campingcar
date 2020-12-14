@@ -20,6 +20,5 @@ urlpatterns = [
     path('', views.main, name='main'),
     path('<str:carType>', views.main, name='main'),
     path('estimate/<str:name>', views.estimate, name='estimate'),
-    path('estimate/<str:name>', views.post, name='estimate_result'),
 ]
 
