@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE HTML>
 
 <html>
@@ -243,11 +244,31 @@
               </tr>
               <tr>
                 <td class="tg-7un6"><span style="font-weight:400;font-style:normal;text-decoration:none">{{car.name}}</span></td>
-                <td class="tg-eiwr"><span style="font-weight:400;font-style:normal;text-decoration:none">-</span></td>
-                <td class="tg-eiwr"><span style="font-weight:400;font-style:normal;text-decoration:none">-</span></td>
-                <td class="tg-eiwr" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none">-</span></td>
-                <td class="tg-eiwr" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none">-</span></td>
-                <td class="tg-eiwr" colspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none">-</span></td>
+                <td class="tg-eiwr">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none">
+                    {{ contract.contract_price|intcomma }}원
+                  </span>
+                </td>
+                <td class="tg-eiwr">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none">
+                    {{ contract.semi_price_1|intcomma }}원
+                  </span>
+                </td>
+                <td class="tg-eiwr" colspan="2">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none">
+                    {{ contract.semi_price_2|intcomma }}원    
+                  </span>
+                </td>
+                <td class="tg-eiwr" colspan="2">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none">
+                    {{ contract.remaining_price|intcomma }}원
+                  </span>
+                </td>
+                <td class="tg-eiwr" colspan="3">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none">
+                    {{ contract.total_price|add:contract.vat|intcomma }}원
+                  </span>
+                </td>
               </tr>
               <tr>
                 <td class="tg-7un6" colspan="10" rowspan="6"><span style="font-weight:400;font-style:normal;text-decoration:none">
@@ -270,7 +291,11 @@
                 <td class="tg-7un6" colspan="2" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none">영수증</span></td>
                 <td class="tg-eiwr" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none">영수금액</span></td>
                 <td class="tg-14gg" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none">계약금</span></td>
-                <td class="tg-eiwr"><span style="font-weight:400;font-style:normal;text-decoration:none">-</span></td>
+                <td class="tg-eiwr">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none">
+                    {{ contract.contract_price|intcomma }}  
+                  </span>
+                </td>
                 <td class="tg-14gg"><span style="font-weight:400;font-style:normal;text-decoration:none">원</span></td>
                 <td class="tg-14gg" colspan="4" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none">※ 본 영수증은 캠핑카 제작 대금용으로만 효력이 있으며, 기타 용도 사용은 무효합니다.</span></td>
               </tr>
@@ -317,7 +342,12 @@
                     <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
                     <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{option.name}}</span>   <span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{option.explaination}}</span></td>
                     <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">{{option_num}}</span></td>
-                    <td class="tg-wyvf"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">{%widthratio option.price 1 option_num %}</span></td>
+                    <td class="tg-wyvf">
+                      <span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">
+                        {% widthratio option.price 1 option_num as result %}
+                        {{ result|intcomma }} 원
+                      </span>
+                    </td>
                   </tr>
                   {% endif %}
                 {% endfor %}
@@ -365,7 +395,11 @@
               </tr>
               <tr>
                 <td class="tg-ens0"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">캠핑카 가격</span></td>
-                <td class="tg-nrix" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
+                <td class="tg-nrix" colspan="2">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none;color:black">
+                    {{ contract.total_price|intcomma }}원
+                  </span>
+                </td>
                 <td class="tg-cly1"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
               </tr>
               <tr>
@@ -375,32 +409,56 @@
               </tr>
               <tr>
                 <td class="tg-ens0"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">개별소비세</span></td>
-                <td class="tg-nrix" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
+                <td class="tg-nrix" colspan="2">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none;color:black">
+                    {{ contract.comsumption_tax|intcomma }}원    
+                  </span>
+                </td>
                 <td class="tg-ens0"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">캠핑카 가격 * 5%</span></td>
               </tr>
               <tr>
                 <td class="tg-ens0"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">교육세</span></td>
-                <td class="tg-nrix" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
+                <td class="tg-nrix" colspan="2">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none;color:black">
+                    {{ contract.education_tax|intcomma }}원    
+                  </span>
+                </td>
                 <td class="tg-ens0"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">개별소비세 * 30%</span></td>
               </tr>
               <tr>
                 <td class="tg-ens0"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">공급가액</span></td>
-                <td class="tg-nrix" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
+                <td class="tg-nrix" colspan="2">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none;color:black">
+                    {{ contract.supply_price|intcomma }}원    
+                  </span>
+                </td>
                 <td class="tg-ens0"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">캠핑카가격 + 개별소비세 + 교육세</span></td>
               </tr>
               <tr>
                 <td class="tg-ens0"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">부가가치세</span></td>
-                <td class="tg-nrix" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">　</span></td>
+                <td class="tg-nrix" colspan="2">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none;color:black">
+                    {{ contract.vat|intcomma }}원    
+                  </span>
+                </td>
                 <td class="tg-ens0"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">공급가액 * 10%</span></td>
               </tr>
               <tr>
                 <td class="tg-0jgy"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">취등록세</span></td>
-                <td class="tg-371j" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#A6A6A6">　</span></td>
+                <td class="tg-371j" colspan="2">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none;color:black">
+                    {{ contract.registration_tax|intcomma }}원    
+                  </span>
+                </td>
                 <td class="tg-0jgy"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">공급가액 * 5%</span></td>
               </tr>
               <tr>
                 <td class="tg-0jgy"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">총 세금</span></td>
-                <td class="tg-371j" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#A6A6A6">　</span></td>
+                <td class="tg-371j" colspan="2">
+                  <span style="font-weight:400;font-style:normal;text-decoration:none;color:black">
+                    {{ contract.total_tax|intcomma }}원    
+                  </span>
+                </td>
                 <td class="tg-0jgy"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">개별소비세</span>  <span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">+ 교육세</span>  <span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">+ 부가세</span></td>
               </tr>
             </tbody>

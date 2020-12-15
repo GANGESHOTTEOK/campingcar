@@ -19,6 +19,7 @@ class Car(models.Model):
 								   default = MODEL_CHOICES[0][0])
 	explanation = models.TextField(default="차량 설명을 입력하세요.")
 	image = models.ImageField(upload_to = 'images/car', blank = True, null = True)
+	price = models.IntegerField(default=0)
 
 	def __str__(self):
 		return self.name
