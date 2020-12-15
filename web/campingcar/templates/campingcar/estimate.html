@@ -1,5 +1,6 @@
 {% extends "./base.html" %}
 {% load static %}
+{% load humanize %}
 
         <!-- inner-->
         {% block contents %}
@@ -16,6 +17,7 @@
                             <img src="{{car.image.url}}">
                         </div>
                         <div class="car_explanation">{{car.explanation}}</div>
+                        <div class="car_explanation">모델 가격 : {{ car.price | intcomma }}원</div>
                     </div>
                     <div class="car_recommend">
                         <div class="reco_detail">
@@ -72,7 +74,7 @@
                                     <h3>{{option.name}}</h3>
                                     <p>{{option.explanation}}</p>
                                     <div class="count">
-                                        <div class="value" id="{{option.name}}_value" value={{option.price}}>{{option.price}}원</div>
+                                        <div class="value" id="{{option.name}}_value" value={{option.price}}>{{ option.price|intcomma }}원</div>
                                         <div class="minus icon" onclick="changePriceNegative(this, '{{option.name}}');">
                                             <img src="../../static/assets/css/images/minus.png">
                                         </div>
