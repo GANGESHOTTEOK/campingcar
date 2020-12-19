@@ -329,17 +329,19 @@
                 <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">1</span></td>
                 <td class="tg-o042" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{car.name}}</span></td>
                 <td class="tg-kv9q"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{car.name}} 기본사양 내역 별첨</span></td>
-                <td class="tg-jl4b" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#FBE3D5">　</span></td>
+                <td class="tg-jl4b" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#FBE3D5">{{car.price|intcomma}}원</span></td>
               </tr>
-
 
               {% for OPTION_KEY, OPTION_ITEM in OPTION_DICT.items %}
                 {% for option, option_num in option_dict.items %}
-                  {% if option.type == OPTION_KEY %}
+                  {% if option.type == OPTION_KEY and option_num != '0' %}
                   <tr>
-                    <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">2</span></td>
+                    <td class="tg-oo1s">
+                      <span style="font-weight:400;font-style:normal;text-decoration:none;color:black">
+                        {{forloop.counter|add:1}}
+                      </span></td>
                     <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{OPTION_ITEM}}</span></td>
-                    <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기본사양</span></td>
+                    <td class="tg-nqd8"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">추가옵션</span></td>
                     <td class="tg-af4a"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{option.name}}</span>   <span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">{{option.explaination}}</span></td>
                     <td class="tg-bhvh"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black;background-color:#E1EEDA">{{option_num}}</span></td>
                     <td class="tg-wyvf">
@@ -352,6 +354,7 @@
                   {% endif %}
                 {% endfor %}
               {% endfor %}
+              <!--
               <tr>
                 <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:black">4</span></td>
                  <td class="tg-oo1s"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">기타</span></td>
@@ -363,6 +366,7 @@
               <tr>
                 <td class="tg-qfua" colspan="6" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:windowtext">합계 금액 : 개별소비세+교육세 포함 (VAT별도)</span></td>
               </tr>
+            -->
               <tr>
               </tr>
               <tr>

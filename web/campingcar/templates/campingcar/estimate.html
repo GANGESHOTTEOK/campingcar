@@ -56,14 +56,16 @@
                     </nav>
                     <hr />
                     <br />
+                    <!--
                     <div class="car_type">
-                        <hr/>냉난방<hr/>
+                        <hr/><hr/>
                         <br/>
                     </div>
-                    <form method="post" class="opt_detail_container">
+                -->
+                    <form name="optionForm" method="post" class="opt_detail_container">
                         {% csrf_token %}
                         {% for option in car.option_set.all %}
-                            <div class="opt_detail opt_view" name="{{option.option_type}}">
+                            <div class="opt_detail opt_view" name="{{option.type}}">
                                 <div class="detail_img">
                                     {% if option.image %}
                                     <img src={{option.image.url}} alt="optionimg">
@@ -86,9 +88,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr class="opt_view" name="{{option.option_type}}"/>
+                            <hr class="opt_view" name="{{option.type}}"/>
                         {% endfor %}
-                        <button type="submit">Send</button>
                     </form>
 
                 </div>
@@ -101,14 +102,15 @@
                     <a href="#" class="back">
                         <span class="icon">이전</span>
                     </a>
-                    <a href="#" class="for">
+                    <a href="#" class="for" onclick="document.optionForm.submit();">
                         <span class="icon">다음</span>
                     </a>
                 </div>
                 <div class="total">
                     <span>총</span>
-                    <span id="total_price" value="0">0</span>
+                    <span id="total_price" value="{{car.price}}">{{car.price|intcomma}}</span>
                     <span>원</span>
+                    <span>(기본 포함)</span>
                 </div>
             </div>
         {% endblock %}
