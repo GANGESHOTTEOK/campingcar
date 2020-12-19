@@ -1,5 +1,6 @@
 {% load static %}
 {% load humanize %}
+{% csrf_token %}
 <!DOCTYPE HTML>
 
 <html>
@@ -7,16 +8,17 @@
 		<title>내 견적서 보기</title>
 		<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="{% static 'assets/sass/deatil.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/sass/detail.css' %}" />
   </head>
   <body>
     <div class="homepage is-preload">
+
       <div class="header">
         <div class="container">
           <div class="header_flex">
-            <div class="basic_opt">기본사양</div>
-            <div class="opt_list">옵션리스트</div>
-            <div class="tax_bill">세금계산서</div>
+            <div class="basic_opt"><button>기본사양</button></div>
+            <div class="opt_list"><button>옵션리스트</button></div>
+            <div class="tax_bill"><button>세금계산서</button></div>
           </div>
         </div>
       </div>
@@ -153,6 +155,8 @@
           </table>
         </div>
 
+        <br />
+      
         <div class="page2">
 
           <!-- 견적&계약서 -->
@@ -357,6 +361,8 @@
 
         </div>
 
+        <br />
+
         <div class="page3">
           <!-- 세금 -->
           <table class="tg">
@@ -447,28 +453,46 @@
         <div class="input_table">
           <ul class="input_ul">
             <li>
-              <label for="title">주소</label>
-              <input type="text" name="client_address">
+              <span class="title">주소</span>
+              <div class="input_container">
+                <input type="text" name="client_address">
+              </div>
             </li>
             <li>
-              <label for="title">주소</label>
-              <input type="text" name="client_address">
+              <div class="title">주소</div>
+              <div class="input_container">
+                <input type="text" name="client_address">
+              </div>
             </li>
             <li>
-              <label for="title">주소</label>
-              <input type="text" name="client_address">
+              <div class="title">주소</div>
+              <div class="input_container">
+                <input type="text" name="client_address">
+              </div>
             </li>
             <li>
-              <label for="title">주소</label>
-              <input type="text" name="client_address">
+              <div class="title">주소</div>
+              <div class="input_container">
+                <input type="text" name="client_address">
+              </div>
             </li>
             <li>
-              <label for="title">주소</label>
-              <input type="text" name="client_address">
+              <div class="title">주소</div>
+              <div class="input_container">
+                <input type="text" name="client_address">
+              </div>
+            </li>
+            <li>
+              <div class="title">주소</div>
+              <div class="input_container">
+                <input type="text" name="client_address">
+              </div>
             </li>
           </ul>
         </div>
-        <div class="amount_bar"></div>
+        <div class="amount_bar">
+          
+        </div>
       </div>
 
 
