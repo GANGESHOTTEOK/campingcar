@@ -106,35 +106,38 @@ html {
   margin: auto;
 }
 
-#amount_bar .btn_area a {
+#amount_bar .btn_area button {
   position: absolute;
-  width: 100px;
+  width: 150px;
   height: 50px;
   line-height: 100%;
   text-decoration: none;
+  background: none;
+  padding: 0;
+  border: none;
 }
 
-#amount_bar .btn_area a.back {
+#amount_bar .btn_area button.back {
   left: 0;
 }
 
-#amount_bar .btn_area a.back span:after {
+#amount_bar .btn_area button.back span:after {
   left: 3px;
   border-right-width: 0;
   border-bottom-width: 0;
 }
 
-#amount_bar .btn_area a.for {
+#amount_bar .btn_area button.for {
   right: 0;
 }
 
-#amount_bar .btn_area a.for span:after {
+#amount_bar .btn_area button.for span:after {
   right: 3px;
   border-left-width: 0;
   border-top-width: 0;
 }
 
-#amount_bar .btn_area a span {
+#amount_bar .btn_area button span {
   position: relative;
   padding: 0 15px;
   overflow: hidden;
@@ -146,7 +149,7 @@ html {
   color: whitesmoke;
 }
 
-#amount_bar .btn_area a span:after {
+#amount_bar .btn_area button span:after {
   display: block;
   position: absolute;
   top: 5.5px;
