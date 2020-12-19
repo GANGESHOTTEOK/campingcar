@@ -35,8 +35,6 @@
                     <nav id="nav" class="inner_nav">
                         <ul>
                             <li class="current" onclick="optionSwitchButton(this);" 
-                            name="optionType" id="all"><button>전체</button></li>
-                            <li onclick="optionSwitchButton(this);" 
                             name="optionType" id="AirConditioner"><button>냉난방</button></li>
                             <li onclick="optionSwitchButton(this);" 
                             name="optionType" id="DoorAndWindow"><button>도어 & 창문</button></li>
@@ -56,16 +54,14 @@
                     </nav>
                     <hr />
                     <br />
-                    <!--
-                    <div class="car_type">
-                        <hr/><hr/>
-                        <br/>
-                    </div>
-                -->
                     <form name="optionForm" method="post" class="opt_detail_container">
                         {% csrf_token %}
                         {% for option in car.option_set.all %}
+                            {% if option.type == "AirConditioner" %}
                             <div class="opt_detail opt_view" name="{{option.type}}">
+                            {% else %}
+                            <div class="opt_detail opt_view" name="{{option.type}}" style="display: none;">
+                            {% endif %}
                                 <div class="detail_img">
                                     {% if option.image %}
                                     <img src={{option.image.url}} alt="optionimg">
