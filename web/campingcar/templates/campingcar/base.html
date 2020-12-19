@@ -101,21 +101,87 @@
 				}
 			}
 
-			function optionSwitchButton(element) {
+			function optionSwitchBefore() {
+				var optionList = ["AirConditioner", "DoorAndWindow", "Earning", "Battery", "Charger", "Inverter",
+								  "SolarPanel", "ETC"];
+				
 				var optionTypeList = document.getElementsByName("optionType");
+
+				var thisOption;
+				var check_submit = false;
 				for (var i = 0; i < optionTypeList.length; i++) {
-					optionTypeList[i].setAttribute('class', '');
+					if (optionTypeList[i].getAttribute('class') == "current") {
+						optionTypeList[i].setAttribute('class', '');
+						if (i == 0) {
+							location.href="/";
+						}
+
+						else {
+							optionTypeList[i - 1].setAttribute('class', 'current');
+							thisOption = optionTypeList[i - 1];
+							break;
+						}
+					}
 				}
-				element.setAttribute('class', 'current');
+				thisOption.setAttribute('class', 'current');
 
 				var optionList = document.getElementsByClassName("opt_view");
 				for (var i = 0; i < optionList.length; i++) {
-					if ((optionList[i].getAttribute("name") == element.getAttribute("id")) ||
-						element.getAttribute("id") == "all")
+					if (optionList[i].getAttribute("name") == thisOption.getAttribute("id"))
 						optionList[i].style.display = "block";
 					else
 						optionList[i].style.display = "none";
 				}
+				if (check_submit) document.optionForm.subit();
+			}
+
+			function optionSwitchNext() {
+				var optionList = ["AirConditioner", "DoorAndWindow", "Earning", "Battery", "Charger", "Inverter",
+								  "SolarPanel", "ETC"];
+				
+				var optionTypeList = document.getElementsByName("optionType");
+
+				var thisOption;
+				var check_submit = false;
+				for (var i = 0; i < optionTypeList.length; i++) {
+					if (optionTypeList[i].getAttribute('class') == "current") {
+						optionTypeList[i].setAttribute('class', '');
+						if (i == optionTypeList.length - 1) {
+							optionTypeList[0].setAttribute('class', 'current');
+							thisOption = optionTypeList[0];
+							var nextButton = document.getElementById('nextButton');
+							nextButton.innerText = "다음";
+							nextButton.setAttribute('onclick', 'optionSwitchNext();');
+							check_submit = true;
+							break;
+						}
+
+						else if (i == optionTypeList.length - 2) {
+							optionTypeList[i + 1].setAttribute('class', 'current');
+							thisOption = optionTypeList[i + 1];
+							var nextButton = document.getElementById('nextButton');
+							nextButton.innerText = "견적서 보기";
+							nextButton.setAttribute('onclick', 'document.optionForm.submit();');
+							break;
+						}
+
+						else {
+							optionTypeList[i + 1].setAttribute('class', 'current');
+							thisOption = optionTypeList[i + 1];
+							break;
+						}
+					}
+				}
+				thisOption.setAttribute('class', 'current');
+
+				var optionList = document.getElementsByClassName("opt_view");
+				for (var i = 0; i < optionList.length; i++) {
+					if (optionList[i].getAttribute("name") == thisOption.getAttribute("id"))
+						optionList[i].style.display = "block";
+					else
+						optionList[i].style.display = "none";
+				}
+				if (check_submit) document.optionForm.subit();
 			}
 
 			function changePriceNegative(element, optionName) {
