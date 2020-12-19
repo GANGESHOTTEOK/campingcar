@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Car, Option, Company
+from .models import Car, Option, Company, Tax
 # Register your models here.
 
 class OptionInline(admin.StackedInline):
@@ -13,3 +13,4 @@ class CarAdmin(admin.ModelAdmin):
 admin.site.register(Car, CarAdmin)
 admin.site.register(Option)
 admin.site.register(Company)
+admin.site.register(Tax)
