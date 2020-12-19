@@ -11,7 +11,7 @@ html {
   width: 80%;
   max-width: 1200px;
   min-width: 800px;
-  margin: 110px auto;
+  margin: 110px auto 200px;
 }
 
 .header {
@@ -51,8 +51,11 @@ html {
 
 .footer .input_table {
   border: 1px solid gray;
-  width: 80%;
+  width: 100%;
   float: left;
+  background: #d2d2d2;
+  position: fixed;
+  bottom: 50px;
 }
 
 .footer .input_table .input_ul {
@@ -87,6 +90,103 @@ html {
   font-weight: 500;
   color: #000000;
   border: 0.15vw solid #aaaaaa;
+}
+
+#amount_bar {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  background: #383838;
+}
+
+#amount_bar .btn_area {
+  position: relative;
+  width: 70%;
+  margin: auto;
+}
+
+#amount_bar .btn_area a {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  line-height: 100%;
+  text-decoration: none;
+}
+
+#amount_bar .btn_area a.back {
+  left: 0;
+}
+
+#amount_bar .btn_area a.back span:after {
+  left: 3px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+
+#amount_bar .btn_area a.for {
+  right: 0;
+}
+
+#amount_bar .btn_area a.for span:after {
+  right: 3px;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+
+#amount_bar .btn_area a span {
+  position: relative;
+  padding: 0 15px;
+  overflow: hidden;
+  width: 30px;
+  height: 27px;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 3;
+  color: whitesmoke;
+}
+
+#amount_bar .btn_area a span:after {
+  display: block;
+  position: absolute;
+  top: 5.5px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  content: '';
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+}
+
+#amount_bar .total {
+  position: absolute;
+  left: 50%;
+  width: 300px;
+  height: 100%;
+  margin-left: -150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  font-family: inherit;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#amount_bar .total span {
+  color: whitesmoke;
+  font-size: 23px;
+  font-weight: 700;
+  margin: 0 3px;
 }
 
 .tg {
