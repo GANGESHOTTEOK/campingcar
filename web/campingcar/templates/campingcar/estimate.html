@@ -34,22 +34,14 @@
                     <hr/>
                     <nav id="nav" class="inner_nav">
                         <ul>
-                            <li class="current" onclick="optionSwitchButton(this);" 
-                            name="optionType" id="AirConditioner"><button>냉난방</button></li>
-                            <li onclick="optionSwitchButton(this);" 
-                            name="optionType" id="DoorAndWindow"><button>도어 & 창문</button></li>
-                            <li onclick="optionSwitchButton(this);" 
-                            name="optionType" id="Earning"><button>어닝</button></li>
-                            <li onclick="optionSwitchButton(this);" 
-                            name="optionType" id="Battery"><button>배터리</button></li>
-                            <li onclick="optionSwitchButton(this);" 
-                            name="optionType" id="Charger"><button>AC충전기</button></li>
-                            <li onclick="optionSwitchButton(this);" 
-                            name="optionType" id="Inverter"><button>인버터</button></li>
-                            <li onclick="optionSwitchButton(this);" 
-                            name="optionType" id="SolarPanel"><button>태양광 시스템</button></li>
-                            <li onclick="optionSwitchButton(this);" 
-                            name="optionType" id="ETC"><button>기타</button></li>
+                            <li class="current" name="optionType" id="AirConditioner"><button>냉난방</button></li>
+                            <li name="optionType" id="DoorAndWindow"><button>도어 & 창문</button></li>
+                            <li name="optionType" id="Earning"><button>어닝</button></li>
+                            <li name="optionType" id="Battery"><button>배터리</button></li>
+                            <li name="optionType" id="Charger"><button>AC충전기</button></li>
+                            <li name="optionType" id="Inverter"><button>인버터</button></li>
+                            <li name="optionType" id="SolarPanel"><button>태양광 시스템</button></li>
+                            <li name="optionType" id="ETC"><button>기타</button></li>
                         </ul>
                     </nav>
                     <hr />
@@ -95,12 +87,15 @@
             
             <div id="amount_bar">
                 <div class="btn_area">
-                    <a href="#" class="back">
+                    <button class="back" onclick="optionSwitchBefore();">
                         <span class="icon">이전</span>
-                    </a>
+                    </button>
+                    <!--
                     <a href="#" class="for" onclick="document.optionForm.submit();">
-                        <span class="icon">다음</span>
-                    </a>
+                    -->
+                    <button class="for" onclick="optionSwitchNext();">
+                        <span class="icon" id="nextButton">다음</span>
+                    </button>
                 </div>
                 <div class="total">
                     <span>총</span>
