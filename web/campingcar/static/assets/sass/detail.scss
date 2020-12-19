@@ -99,12 +99,15 @@ html {
         width:70%;
         margin: auto;
 
-        a{
+        button{
             position: absolute;
-            width: 100px;
+            width: 150px;
             height: 50px;
             line-height: 100%;
             text-decoration: none;
+            background: none;
+            padding: 0;
+            border: none;
 
             &.back { 
                 left:0;
