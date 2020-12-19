@@ -86,3 +86,12 @@ class Company(models.Model):
 	
 	def __str__(self):
 		return self.name + "(대표: " + self.ceo_name + ")"
+
+class Tax(models.Model):
+	name = models.CharField(max_length=100,
+							default="세금",
+							help_text='세금의 항목명을 입력하세요')
+
+	percentage = models.IntegerField(default=0,
+		 						help_text='세금의 비율(퍼센트)을 입력하세요. *숫자만 입력 가능!')
+
