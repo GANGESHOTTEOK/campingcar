@@ -11,26 +11,25 @@
                 <hr />
 
                 <div class="car_intro_container inner_page">
+
                     <div class="intro">
-                        <h1>{{car.name}}</h1>
                         <div class="car_detail_img">
                             <img src="{{car.image.url}}">
                         </div>
-                        <div class="car_explanation">{{car.explanation}}</div>
-                        <div class="car_explanation">모델 가격 : {{ car.price | intcomma }}원</div>
                     </div>
-                    <div class="car_recommend">
-                        <div class="reco_detail">
-                            <h2>추천차종</h2>
-                            <div class="graph"></div>
-                            <div class="first">1위 니차</div>
-                            <div class="second">2위 내차</div>
-                            <div class="third">3위 엄마차</div>
-                        </div>
+                    
+                    <div class="car_detail">
+                        <h1>{{car.name}}</h1>
+                        <p class="car_explanation">{{car.explanation}}</p>
+                        <div class="car_price">모델 가격 : {{ car.price | intcomma }}원</div>
                     </div>
+                    
                 </div>
 
                 <div class="opt_container inner_page">
+                    <div class="base_option">
+                        image
+                    </div>
                     <hr/>
                     <nav id="nav" class="inner_nav">
                         <ul>

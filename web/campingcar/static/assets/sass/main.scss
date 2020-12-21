@@ -1085,13 +1085,9 @@
 
 
 			.intro{
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
+                
 				width: 50%;
-				.car_explanation{
-					width: 100%;
-				}
+                
 				.car_detail_img{
 					position: relative;
 					img { 
@@ -1109,22 +1105,22 @@
 				}
 			}
 
-			.car_recommend {
+			.car_detail {
+                display:flex;
+                flex-direction:column;
 				width: 40%;
-				height: auto;
-				position: relative;
-				.reco_detail{
-					height: 100%;
-					border: 1.5px double gray;
-
-					.graph{
-						height: 50%;
-						
-						border: 1.5px double gray;
-						margin: 10px 20px;
-					}
-				}
-			}
+                text-align:left;
+                
+                h1{
+                    font-size:30px;
+                    margin-bottom:10px;
+                }
+                .car_price{
+                    margin-top:auto;
+                    margin-bottom:20px;
+                    font-weight:700;
+                }
+            }
 		}
 
 		.car_type{
@@ -1134,14 +1130,24 @@
 			font-size: large;
 			hr{ margin:15px 15px 15px}
 		}
-		 
+		
+        .base_option{
+            width:90%;
+            margin:0 auto;
+            height:500px;
+            border:1px solid gray;
+            border-radius:1%;
+        }
+        
 		.opt_detail_container {
+            
 
 			display:flex;
 			flex-direction: column;
 			justify-content: flex-start;
 			
-
+            
+            
 			.opt_detail{
 				width:90%;
 				margin: auto;
